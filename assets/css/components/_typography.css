@@ -1,0 +1,18 @@
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form__link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form__link:hover {
+  text-decoration: underline;
+}

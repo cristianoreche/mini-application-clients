@@ -1,0 +1,28 @@
+@import url("components/_reset.css");
+@import url("components/_layout.css");
+@import url("components/_typography.css");
+@import url("components/_input.css");
+@import url("components/_button.css");
+@import url("components/_card.css");
+@import url("components/_form.css");
+@import url("components/_alert.css");
+@import url("components/_table.css");
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header-with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}

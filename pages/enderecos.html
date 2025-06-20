@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Endereços</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <!-- Dependência de banco de dados em memória -->
+  <script src="../alasql.min.js"></script>
+
+  <!-- Scripts auxiliares -->
+  <script src="../assets/js/validator.js"></script>
+  <script src="../assets/js/viacep.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- Ícones (Lucide) via CDN + inicialização separada -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/lucide-init.js" defer></script>
+</head>
+
+<body class="page">
+  <div class="dashboard-container">
+    <div class="header-with-action">
+      <h2 class="title">Cadastro de Endereços</h2>
+      <button class="field__button export-button" onclick="exportarBanco()">
+        <i data-lucide="download"></i> Exportar Banco
+      </button>
+    </div>
+    <div class="dashboard-grid">
+      <!-- Seção do Formulário -->
+      <div class="form-section">
+        <form id="formEndereco">
+          <input class="field__input" type="text" id="clienteId" placeholder="CPF do Cliente" required />
+          <input class="field__input" type="text" id="cep" placeholder="CEP" required />
+          <input class="field__input" type="text" id="rua" placeholder="Rua" required />
+          <input class="field__input" type="text" id="bairro" placeholder="Bairro" required />
+          <input class="field__input" type="text" id="cidade" placeholder="Cidade" required />
+          <input class="field__input" type="text" id="estado" placeholder="Estado" required />
+          <input class="field__input" type="text" id="pais" placeholder="País" value="Brasil" required />
+          <label class="form__label"><input type="checkbox" id="principal" /> Principal</label>
+          <button class="field__button" type="submit">Cadastrar Endereço</button>
+        </form>
+      </div>
+
+      <!-- Seção de Listagem -->
+      <div class="form-section">
+       <div class="field">
+          <input class="field__input" type="text" id="buscaEndereco" placeholder="Buscar por endereco"
+            oninput="listarEnderecos()">
+        </div>
+
+        <div class="table-container">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Endereço</th>
+                <th>Cidade/Estado</th>
+                <th>Principal</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="listaEnderecos"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="alertBox" class="alert"></div>
+  </div>
+</body>
+
+</html>

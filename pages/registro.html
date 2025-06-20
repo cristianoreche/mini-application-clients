@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Usuário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <!-- Dependência de banco de dados em memória -->
+  <script src="../alasql.min.js"></script>
+
+  <!-- Scripts auxiliares -->
+  <script src="../assets/js/validator.js"></script> <!-- Validação de CPF e máscaras -->
+  <script src="../assets/js/viacep.js"></script> <!-- Integração com API ViaCEP -->
+  <script src="../assets/js/script.js" defer></script> <!-- Lógica principal da aplicação -->
+
+  <!-- Ícones (Lucide) via CDN + inicialização separada -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/lucide-init.js" defer></script>
+</head>
+
+<body class="page">
+  <div class="page__container">
+    <h2 class="title">Cadastro de Usuário</h2>
+
+    <input class="field__input" type="text" id="usuario" placeholder="Novo usuário" required />
+
+    <div class="field">
+      <input class="field__input" type="password" id="senha" placeholder="Senha" required />
+      <i id="toggleIcon-senha" data-lucide="eye" class="form__toggle" onclick="toggleSenha('senha')"></i>
+    </div>
+
+    <button class="field__button" onclick="cadastrarUsuario()">Cadastrar</button>
+    <a href="../index.html" class="form__link">← Voltar ao login</a>
+
+    <div id="alertBox" class="alert"></div>
+  </div>
+</body>
+
+</html>

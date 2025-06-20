@@ -1,0 +1,29 @@
+.field {
+  position: relative;
+}
+
+.field .field__input {
+  padding-right: 40px;
+}
+
+.field__input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.field__input:hover,
+.field__input:focus {
+  border: 2px solid #cc0063;
+}
+
+.field__label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+

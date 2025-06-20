@@ -1,0 +1,17 @@
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela th {
+  background-color: #f0f0f0;
+}

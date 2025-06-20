@@ -1,0 +1,48 @@
+.field__button {
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.field__button {
+  background-color: #cc0063;
+}
+
+.field__button:hover {
+  background-color: #9c004b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.export-button {
+  background-color: #4CAF50;
+  width: auto; 
+  padding: 12px 20px;
+}
+
+.export-button:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.field__button i {
+  width: 16px;
+  height: 16px;
+}
+
+a.field__button {
+  text-decoration: none;
+  display: inline-block;
+}

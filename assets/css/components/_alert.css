@@ -1,0 +1,32 @@
+.alert {
+  position: fixed;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+  max-width: 90%;
+  text-align: center;
+}
+
+
+.alert--show {
+  opacity: 1;
+}
+
+.alert--success {
+  background-color: #28a745;
+}
+
+.alert--error {
+  background-color: #dc3545;
+}
+
+.alert--info {
+  background-color: #17a2b8;
+}

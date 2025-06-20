@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Usuário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <!-- Dependência de banco de dados em memória -->
+  <script src="../alasql.min.js"></script>
+
+  <!-- Scripts auxiliares -->
+  <script src="../assets/js/validator.js"></script> <!-- Validação de CPF e máscaras -->
+  <script src="../assets/js/viacep.js"></script> <!-- Integração com API ViaCEP -->
+  <script src="../assets/js/script.js" defer></script> <!-- Lógica principal da aplicação -->
+
+  <!-- Ícones (Lucide) via CDN + inicialização separada -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/lucide-init.js" defer></script>
+</head>
+
+<body class="page">
+  <div class="dashboard-container">
+    <h2 class="title">Painel do Sistema</h2>
+
+    <!-- CONTADOR ADICIONADO AQUI (só HTML) -->
+    <div class="counters">
+      <div class="counter-card">
+        <div class="counter-value" id="totalUsuarios">0</div>
+        <div class="counter-label">Usuários</div>
+      </div>
+      <div class="counter-card">
+        <div class="counter-value" id="totalClientes">0</div>
+        <div class="counter-label">Clientes</div>
+      </div>
+      <div class="counter-card">
+        <div class="counter-value" id="totalEnderecos">0</div>
+        <div class="counter-label">Endereços</div>
+      </div>
+    </div>
+
+    <!-- Seu menu original (não mexi) -->
+    <nav class="dashboard__nav">
+      <a href="clientes.html" class="field__button">Cadastrar Clientes</a>
+      <a href="enderecos.html" class="field__button">Cadastrar Endereços</a>
+      <button onclick="exportarBanco()" class="field__button">Exportar Banco</button>
+      <a href="../index.html" class="field__button">Logout</a>
+    </nav>
+    <!-- Seção de importação -->
+    <div class="import-section">
+      <h4 class="title">Importar Banco</h4>
+      <input class="field__input" type="file" id="uploadDB" accept=".json" onchange="importarBanco()" />
+    </div>
+    <div id="alertBox" class="alert"></div>
+  </div>
+</body>
+
+</html>

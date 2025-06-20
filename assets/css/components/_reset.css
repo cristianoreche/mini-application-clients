@@ -1,0 +1,135 @@
+/* Reset CSS mais completo */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove default anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Make images easier to work with */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+}
+
+/* Remove all animations, transitions and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Remove default table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset form elements */
+button, input, optgroup, select, textarea {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+/* Remove focus outlines for non-keyboard users */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Correct the cursor style of increment and decrement buttons */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Remove the default appearance of search inputs */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/* Remove the inner padding in Chrome and Safari on macOS */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* Remove the cancel button in Chrome and Safari on macOS */
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* Remove the default vertical scrollbar in IE 10+ */
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* Correct the cursor style of buttons */
+button, [type="button"], [type="reset"], [type="submit"] {
+  cursor: pointer;
+}
+
+/* Remove the border on images inside links */
+img {
+  border-style: none;
+}
+
+/* Hide content visually but keep it accessible */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

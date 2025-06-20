@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login de Usuário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Dependências -->
+  <script src="alasql.min.js"></script>
+  <script src="assets/js/validator.js"></script>
+  <script src="assets/js/viacep.js"></script>
+  <script src="assets/js/script.js" defer></script>
+
+  <!-- Ícones -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/lucide-init.js" defer></script>
+</head>
+
+<body class="page">
+  <div class="page__wrapper">
+    <div class="page__container">
+      <p id="avisoInicial" class="page__info-box" style="display: none;">
+        ⚠️ Atenção: esta aplicação armazena dados temporariamente no navegador. Você deve cadastrar um usuário para
+        iniciar.
+      </p>
+      <h2 class="title">Login</h2>
+      <div class="field">
+        <input class="field__input" type="text" id="usuario" placeholder="Usuário" required />
+      </div>
+      <div class="field">
+        <input class="field__input" type="password" id="senha" placeholder="Senha" required />
+        <i id="toggleIcon-senha" data-lucide="eye" class="form__toggle" onclick="toggleSenha('senha')"></i>
+      </div>
+      <button class="field__button" onclick="fazerLogin()">Entrar</button>
+      <a href="pages/registro.html" class="form__link">Não tem conta? Cadastre-se</a>
+      <div id="alertBox" class="alert"></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. CARREGA USUÁRIOS SALVOS
+      // Busca os dados de usuários armazenados no localStorage
+      const usuariosSalvos = localStorage.getItem("usuarios");
+
+      // 2. INICIALIZA O BANCO DE DADOS
+      // Se existirem usuários salvos:
+      if (usuariosSalvos) {
+        // Cria a tabela de usuários (se não existir)
+        alasql("CREATE TABLE IF NOT EXISTS usuarios (nome STRING, senha STRING)");
+
+        // Preenche a tabela com os dados salvos
+        alasql.tables.usuarios.data = JSON.parse(usuariosSalvos);
+      }
+
+      // 3. GERENCIA O AVISO INICIAL
+      // Obtém referência ao elemento de aviso (se existir na página)
+      const aviso = document.getElementById("avisoInicial");
+
+      // Verifica se existem usuários cadastrados
+      const temUsuarios = alasql("SELECT * FROM usuarios");
+
+      // Se o elemento de aviso existir:
+      if (aviso) {
+        // Mostra o aviso apenas se NÃO houver usuários cadastrados
+        // (display "block" se array vazio, "none" se tiver usuários)
+        aviso.style.display = temUsuarios.length === 0 ? "block" : "none";
+      }
+    });
+  </script>
+</body>
+
+</html>

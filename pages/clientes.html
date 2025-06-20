@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Clientes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- Dependências -->
+  <script src="../alasql.min.js"></script>
+  <script src="../assets/js/validator.js"></script>
+  <script src="../assets/js/viacep.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- Ícones -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/lucide-init.js" defer></script>
+</head>
+
+<body class="page">
+  <div class="dashboard-container">
+    <div class="header-with-action">
+      <h2 class="title">Cadastro de Clientes</h2>
+      <button class="field__button export-button" onclick="exportarBanco()">
+        <i data-lucide="download"></i> Exportar Banco
+      </button>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- Seção do Formulário -->
+      <div class="form-section">
+        <form id="formCliente">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input class="field__input" type="text" id="nome" required />
+          </div>
+
+          <div class="field">
+            <label for="cpf">CPF</label>
+            <input class="field__input" type="text" id="cpf" required />
+          </div>
+
+          <div class="field">
+            <label for="nascimento">Data de Nascimento</label>
+            <input class="field__input" type="date" id="nascimento" required />
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone Fixo (Opcional)</label>
+            <input class="field__input" type="text" id="telefone" />
+          </div>
+
+          <div class="field">
+            <label for="celular">WhatsApp</label>
+            <input class="field__input" type="text" id="celular" required />
+          </div>
+
+          <button class="field__button" type="submit">Cadastrar</button>
+          <br>
+          <a href="enderecos.html" class="field__button">
+            Cadastrar Endereços
+          </a>
+        </form>
+      </div>
+
+      <!-- Seção de Busca e Ações -->
+      <div class="form-section">
+        <div class="field">
+          <input class="field__input" type="text" id="buscaCliente" placeholder="Buscar por nome ou CPF"
+            oninput="listarClientes()">
+        </div>
+
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>WhatsApp</th>
+              <th>Endereços</th>
+            </tr>
+          </thead>
+          <tbody id="listaClientes"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="alertBox" class="alert"></div>
+  </div>
+</body>
+
+</html>

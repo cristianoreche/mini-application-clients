@@ -1,0 +1,38 @@
+{
+  "usuarios": [
+    { "nome": "admin", "senha": "1234" }
+  ],
+  "clientes": [
+    {
+      "cpf": "12345678901",
+      "nome": "João da Silva",
+      "nascimento": "1985-06-15",
+      "telefone": "(41) 3232-1122",
+      "celular": "(41) 99999-8888"
+    }
+  ],
+  "enderecos": [
+    {
+      "id": 1,
+      "cep": "80000000",
+      "rua": "Rua das Flores",
+      "bairro": "Centro",
+      "cidade": "Curitiba",
+      "estado": "PR",
+      "pais": "Brasil",
+      "clienteCpf": "12345678901",
+      "principal": true
+    },
+    {
+      "id": 2,
+      "cep": "80040000",
+      "rua": "Rua Secundária",
+      "bairro": "Boa Vista",
+      "cidade": "Curitiba",
+      "estado": "PR",
+      "pais": "Brasil",
+      "clienteCpf": "12345678901",
+      "principal": false
+    }
+  ]
+}
